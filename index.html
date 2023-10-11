@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食品安全快速检测学习平台</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        .title {
+            height: 88px;
+            background: #2D3749;
+            line-height: 88px;
+            font-size: 38px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            padding-left: 40px;
+        }
+        .nav  {
+            width: 260px;
+            height: 992px;
+            background: #1377F0;
+            float: left;
+        }
+        .nav li {
+            height: 84px;
+            line-height: 42px;
+            padding-top: 20px;
+            cursor: pointer;
+        }
+
+        .nav li h3 {
+            font-size: 28px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+
+        .nav li img {
+            float: left;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-right: 12px;
+        }
+
+        .right_middle {
+            width: calc(100% - 260px);
+            background-color: #F5F5F5;
+            float: left;
+        }
+        .middle {
+            background: #2A5A95;
+            border-radius: 12px 12px 12px 12px;
+            height: 962px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 16px;
+            padding-top: 60px;
+        }
+        .middle_1 {
+            background: #4773AA;
+            border-radius: 12px 12px 12px 12px;
+            margin: 0 30px;
+            
+        }
+        .middle_1 img {
+            margin: 30px 0 30px 30px;
+            
+        }
+        .ceyan{
+            font-size: 32px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-top: 56px;
+            margin-left: 30px;
+
+        }
+        .bi_1 {
+            padding-top: 34px;
+        }
+        .bi, .ceyan {
+            float: left;
+            margin-right: 20px; 
+        }
+
+        .middle_1::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .kaishi {
+            width: 160px;
+            height: 52px;
+            background: #07C160;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            float: right;
+            line-height: 52px;
+            text-align: center;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-top: 54px;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+        .jingixng {
+            width: 160px;
+            height: 52px;
+            background: #1377F0;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            font-size: 24px;
+            float: right;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            line-height: 52px;
+            text-align: center;
+            margin-right: 30px;
+            margin-top: 54px;
+            cursor: pointer;
+        }
+        .kezhongceyan {
+            background: #2A5A95;
+            border-radius: 12px 12px 12px 12px;
+            height: 962px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 16px;
+            overflow: auto;
+
+        }
+        .kezhongceyan::-webkit-scrollbar {
+            display: none;
+        }
+        .fuyuansu {
+            position: relative;
+        }
+        .ceyan1 {
+            font-size: 32px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .zongfen {
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #E6E6E6;
+            padding-top: 26px;
+            padding-right: 30px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .wenti li {
+            background: #4772A7;
+            border-radius: 12px 12px 12px 12px;
+            margin: 30px;
+            
+        }
+        .panduan {
+            width: 175px;
+            height: 50px;
+            background: #FF8E0A;
+            border-radius: 8px 0px 50px 0px;
+            opacity: 1;
+            font-size: 28px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            padding-left: 20px;
+            line-height: 50px;
+            margin-bottom: 20px;
+        }
+        .wenzi {
+            font-size: 28px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-left: 40px; 
+            display: block;
+
+        }
+        .fuxuan {
+            font-size: 28px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+
+        }
+        input[type="radio"] {
+            width: 24px;
+            height: 24px;
+            color: #FFFFFF;
+
+        }
+		input[type="radio"] {
+			position: relative;
+			margin: 5px;
+			width: 16px;
+			height: 16px;
+			font-size: 14px;
+			vertical-align: text-top;
+			border: 0;
+			cursor: pointer;
+            margin-right: 30px;
+		}
+ 
+		input[type="radio"]:after {
+			content: "";
+			position: absolute;
+			top: -1px;
+			left: -1px;
+			display: block;
+			width: 24px;
+			height: 24px;
+			border-radius: 3px;
+            border: 1px solid white;
+            background-color: #4772A7;
+			visibility: visible;
+		}
+ 
+		input[type="radio"]:checked::before {
+			content: "";
+			position: absolute;
+			top: -1px;
+			left: -1px;
+			display: block;
+			width: 28px;
+			height: 28px;
+			border-radius: 3px;
+			border-color: #fff;
+			background-color: #FF8E0A;
+		}
+ 
+		input[type="radio"]:checked:after {
+			content: "";
+			position: absolute;
+			top: 2px;
+			left: 5px;
+			display: table;
+			width: 8px;
+			height: 16px;
+			border: 2px solid white;
+			border-top: 0;
+			border-left: 0;
+			border-radius: 0;
+            background-color: #FF8E0A;
+			transform:  rotate(45deg);
+			animation: checked-select 0.2s ease-in forwards;
+		}
+ 
+		@keyframes checked-select {
+			to {
+				transform: scale(1) rotate(45deg);
+			}
+		}
+
+        .checkbox {
+            margin-left: 120px !important;
+
+        }
+        .checkbox_p {
+            margin-top: 30px;
+            margin-left: 40px;
+            padding-bottom: 42px;
+        }
+        .tijiao {
+            width: 120px;
+            height: 52px;
+            background: #1377F0;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            line-height: 52px;
+            text-align: center;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            float: right;
+            margin: 30px;
+            cursor: pointer;
+        }
+        .tojiaochenggong {
+            background: #2A5A95;
+            border-radius: 12px 12px 12px 12px;
+            height: 962px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 16px;
+            text-align: center;
+            position: relative;
+        }
+        .tojiaochenggong img {
+            margin-top: 200px;
+            margin-bottom: 20px;
+        }
+        .tojiaochenggong span {
+            font-size: 32px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+        .fanhui {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 120px;
+            height: 52px;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 2px solid #FFFFFF;
+            line-height: 52px;
+            text-align: center;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        食品安全快速检测学习平台
+    </div>
+    <div class="nav">
+        <ul>
+            <li>
+                <img src="./images/Frame.png" alt="">
+                <h3>学情统计</h3>
+            </li>
+            <li>
+                <img src="./images/Group 2830.png" alt="">
+                <h3>学习记录</h3>
+            </li>
+            <li class="ketang">
+                <img src="./images/jinghao.png" alt="">
+                <h3>课堂活动</h3>
+            </li>
+            <li class="kaohe">
+                <img src="./images/PencilSimple.png" alt="">
+                <h3>理论考核</h3>
+            </li>
+            <li class="chengguo">
+                <img src="./images/Frame (2).png" alt="">
+                <h3>成果评价</h3>
+            </li>
+        </ul>
+    </div>
+
+    <div class="right_middle ">
+
+ 
+        <div class="middle" >
+            <div class="middle_1" >
+                <img src="./images/Group 4136.png" class="bi">
+                <p class="ceyan">课中测验</p>
+                <img src=".//images/PencilSimple.png" class="bi_1">
+
+                <div class="kaishi">开始作答</div>
+                <div class="jingixng" >进行中</div>
+
+
+        
+            </div>
+
+        </div>
+
+        <div class="kezhongceyan middle_1" style="display: none;">
+            <div class="fuyuansu">
+                <div></div>
+                <div class="ceyan1">课中测验</div>
+                <div class="zongfen">总分:100分</div>
+            </div>
+            <div class="wenti">
+                <ul>
+                    <li>
+                        <div class="panduan">1.判断题</div>
+                        <span class="wenzi">
+                            实施检测工作前要先检查所用仪器设备是否齐全,是否能正常使用。(20分)
+
+                        </span>
+                        <div class="checkbox_p">
+                            <label class="fuxuan">
+                                <input type="radio" name="question1">
+                                A.需要
+                            </label>
+                            <label class="fuxuan">
+                                <input type="radio" name="question1">
+                                B.无需
+                            </label>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="panduan">2.单选题</div>
+                        <span class="wenzi">
+                            食品风险检测工作人员采集样品，应当( )。(20分) 
+
+                        </span>
+                        <div class="checkbox_p">
+                            <label class="fuxuan">
+                                <input type="radio"  name="question2">
+                                A.以出厂价购买
+                            </label>
+                            <label class="fuxuan">
+                                <input type="radio" class="checkbox" name="question2">
+                                B.免费抽取
+                            </label>
+                            <label class="fuxuan">
+                                <input type="radio" class="checkbox" name="question2">
+                                C.以批发价购买
+                            </label>
+                            <label class="fuxuan">
+                                <input type="radio" class="checkbox" name="question2">
+                                D.按照市场价格购买
+                            </label>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="panduan">3.判断题</div>
+                        <span class="wenzi">
+                            移液枪使用结束后可以直接放置于实验台面。(20分)
+
+                        </span>
+                        <div class="checkbox_p">
+                            <label class="fuxuan">
+                                <input type="radio" name="question3">
+                                A.正确
+                            </label>
+                            <label class="fuxuan">
+                                <input type="radio" class="checkbox" name="question3">
+                                B.错误
+                            </label>
+                        </div>
+
+                    </li>
+
+
+
+                    <li>
+                        <div class="panduan">4.单选题</div>
+                        <span class="wenzi">
+                            抽样文书可由抽样人员自行涂改需要更改的地方,( )企业代表签字确认。(20分)
+
+                        </span>
+                        <div class="checkbox_p">
+                            <label class="fuxuan">
+                                <input type="radio" name="question4">
+                                A.需要
+                            </label>
+                            <label class="fuxuan">
+                                <input type="radio" class="checkbox" name="question4">
+                                B.无需
+                            </label>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <div class="panduan">5.判断题</div>
+                        <span class="wenzi">
+                            离心操作时，样品离心管要对称放置，并且对称管需重量相等。(20分)
+
+                        </span>
+                        <div class="checkbox_p">
+                            <label class="fuxuan">
+                                <input type="radio" name="question5">
+                                A.正确
+                            </label>
+                            <label class="fuxuan">
+                                <input type="radio" class="checkbox" name="question5">
+                                B.错误
+                            </label>
+                        </div>
+
+                    </li>
+
+
+
+                </ul>
+                <div class="tijiao">提交</div>
+            </div>
+        </div>
+
+
+        <div class="tojiaochenggong" style="display: none;">
+            <img src="./images/Group 233.png"><br>
+            <span>&nbsp;提交成功！</span>
+            <div class="fanhui">返回</div>
+        </div>
+
+
+    </div>
+
+    <script src="./JS/Jquery.js"></script>
+    <script src="./JS/echarts.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.kaohe').css('background-color', '#FFFFFF');
+            $('.kaohe h3').css('color', '#1377F0');
+            $('.kaohe img').attr('src', './images/pencil.png');
+ 
+            $('.chengguo').click(function() {
+                window.location.href = 'chengguo.html'
+            });
+            $('.kaishi').click(function() {
+                $('.middle').hide();
+                $('.kezhongceyan').show();
+                $('.liebiao').show();
+            });
+            $('.tijiao').click(function() {
+                $('.middle').hide();
+                $('.kezhongceyan').hide();
+                $('.tojiaochenggong').show();
+            });
+
+
+
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>

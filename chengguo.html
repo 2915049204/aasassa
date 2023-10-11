@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食品安全快速检测学习平台</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        .title {
+            height: 88px;
+            background: #2D3749;
+            line-height: 88px;
+            font-size: 38px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            padding-left: 40px;
+        }
+        .nav  {
+            width: 260px;
+            height: 992px;
+            background: #1377F0;
+            float: left;
+        }
+        .nav li {
+            height: 84px;
+            line-height: 42px;
+            padding-top: 20px;
+            cursor: pointer;
+        }
+
+        .nav li h3 {
+            font-size: 28px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+
+        .nav li img {
+            float: left;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-right: 12px;
+        }
+
+        .right_middle {
+            height: 900px;
+            width: calc(100% - 260px);
+            background-color: #F5F5F5;
+            float: left;
+            
+        }
+        .middle {
+            background: #2A5A95;
+            border-radius: 12px 12px 12px 12px;
+            height: 962px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 16px;
+            position: relative;
+        }
+        .xuehseng {
+            font-size: 32px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            border-bottom: 1px solid #EBEBEB;
+            padding-top: 30px;
+            padding-left: 33px;
+            padding-bottom: 30px;
+        }
+        .wenjian {
+            font-size: 28px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #E6E6E6;
+            margin-left: 46px;
+            margin-top: 60px;
+            float: left;
+        }
+        .chuan {
+            width: 200px;
+            height: 200px;
+            background: #FFFFFF;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 2px solid #FFFFFF;
+            float: left;
+            margin-top: 60px;
+            margin-left: 20px;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #1377F0;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+        .chuan .shangchuan  {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        .ziping {
+            font-size: 28px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #E6E6E6;
+            float: left;
+            margin-left: 49px;
+            margin-right: 20px;
+            padding-top: 10px;
+        }
+        .fenshu {
+            width: 360px;
+            height: 56px;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 1px solid #FFFFFF;
+            background-color: #2A5A95;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            text-indent: 20px;
+        }
+        .ping {
+            margin-top: 53px;
+        }
+        #video {
+            width: 300px; 
+            height: 300px; 
+            display: none;
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            width: 100%; 
+            height: 100%;  
+        }
+        .tijiao {
+            width: 120px;
+            height: 52px;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 2px solid #FFFFFF;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            line-height: 52px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 30px;
+            cursor: pointer;
+        }
+        .tojiaochenggong {
+            background: #2A5A95;
+            border-radius: 12px 12px 12px 12px;
+            height: 962px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 16px;
+            text-align: center;
+            position: relative;
+        }
+        .tojiaochenggong img {
+            margin-top: 200px;
+            margin-bottom: 20px;
+        }
+        .tojiaochenggong span {
+            font-size: 32px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+        .fanhui {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 120px;
+            height: 52px;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 2px solid #FFFFFF;
+            line-height: 52px;
+            text-align: center;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin: 30px;
+            cursor: pointer;
+        }
+        .tijiao333 {
+            width: 120px;
+            height: 52px;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 1px solid #FFFFFF;
+            font-size: 24px;
+            background-color: #2A5A95 !important;
+            font-family: Source Han Sans CN-Medium, Source Han Sans CN;
+            font-weight: 500;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 52px;
+            margin-left: 100px;
+            margin-top: 60px;
+            cursor: pointer;
+
+        }
+        .shangchuan333 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;  
+            left: 0;  
+            width: 100%; 
+            height: 100%;  
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        食品安全快速检测学习平台
+    </div>
+    <div class="nav">
+        <ul>
+            <li>
+                <img src="./images/Frame.png" alt="">
+                <h3>学情统计</h3>
+            </li>
+            <li>
+                <img src="./images/Group 2830.png" alt="">
+                <h3>学习记录</h3>
+            </li>
+            <li class="ketang">
+                <img src="./images/jinghao.png" alt="">
+                <h3>课堂活动</h3>
+            </li>
+            <li class="kaohe">
+                <img src="./images/PencilSimple.png" alt="">
+                <h3>理论考核</h3>
+            </li>
+            <li class="chengguo">
+                <img src="./images/Frame (2).png" alt="">
+                <h3>成果评价</h3>
+            </li>
+        </ul>
+    </div>
+
+    <div class="right_middle ">
+        <div class="middle">
+            <div class="xuehseng">学生评价</div>
+                <div class="wenjian">上传文件</div>
+                <div class="chuan">
+                    <img src="./images/shangchuan.png" class="shangchuan"><br>
+                    点击上传图片
+                    <video id="video" autoplay > </video>
+                    <img id="preview" style="display: none;" class="shangchuan333">
+                </div>
+
+                <input type="file" id="fileInput" style="display: none;" accept="image/*">
+
+            <div style="clear:both;"></div>
+            
+            <div class="ping">
+                <div class="ziping">自评分数</div>
+                <input type="text" value="请输入自评分数" class="fenshu">
+            </div>
+            <div class="tijiao">提交</div>
+        </div>
+        <div class="tojiaochenggong" style="display: none;">
+            <img src="./images/Group 233.png"><br>
+            <span>&nbsp;提交成功！</span>
+            <div class="fanhui">返回</div>
+        </div>
+
+    </div>
+
+
+
+    <script src="./JS/Jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.chengguo').css('background-color', '#FFFFFF');
+            $('.chengguo h3').css('color', '#1377F0');
+            $('.chengguo img').attr('src', './images/Frame (1).png');
+            $('.kaohe').click(function() {
+                window.location.href = 'index.html'
+            });
+
+            $('.chengguo').click(function() {
+                window.location.href = 'chengguo.html'
+            });
+            // 当点击.chuan元素时，触发隐藏的文件输入元素
+
+            $('.fenshu').focus(function() {
+                if ($(this).val() === '请输入自评分数') {
+                    $(this).val('');
+                }
+            }).blur(function() {
+                if ($(this).val() === '') {
+                    $(this).val('请输入自评分数');
+                }
+            });
+
+            var video = document.getElementById('video');
+
+            $('.chuan').one('click', function() {
+                // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                //     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                //         video.srcObject = stream;
+                //         video.play();
+                //     });
+                // }
+                // $('#video').show();
+                $('#fileInput').click();
+                // 延迟2秒显示.tijiao333
+
+            });
+
+            $('#fileInput').change(function() {
+                var file = this.files[0];
+                if (file.type.indexOf("image") < 0) {
+                    alert("请上传图片文件");
+                    return;
+                }
+                // 显示指定的图片
+                $('#preview').attr('src', './images/7.jpg').show();
+            });
+            $('.tijiao').click(function() {
+                $('.middle').hide();
+                $('.tojiaochenggong').show();
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>
